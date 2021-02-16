@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background: rgb(30, 79, 100);
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  /* You can mess with the spacing of the links here, but we need the justify content-space around to be before the width if we want it to do something*/
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.3rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.5s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: rgb(255, 208, 208);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 2rem;
+  height: 0.3rem;
+  background: white;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 10.24rem) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background: rgb(30, 79, 100);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /*You can play around with width, even make it 100%*/
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Main front page */
+#front-page {
+  width: auto;
+  height: 70rem;
+}
+
+.background-pic::after {
+  content: "";
+  background: url(/wedding6.jpg);
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  top: 0;
+  width: 100%;
+  height: 93vh;
+  background-position: center;
+  /* height: 100%;
+  width: 100%;
+  background: url(/wedding6.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.8;
+
+  z-index: 1; */
+}
+
+.background-pic {
+  position: relative;
+}
+
+.title {
+  color: black;
+  display: inline-block;
+  position: relative;
+  font-size: 2.1rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  margin-top: 14rem;
+  margin-left: 10rem;
+  border: 0.3rem solid rgb(30, 79, 100);
+  padding: 2rem 2rem;
+  padding-top: 3rem;
+  background: rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 5px 10px rgba(61, 61, 61, 0.9);
+  z-index: 2;
+}
+.subtitle {
+  display: block;
+  font-size: 3rem;
+  position: relative;
+  text-align: left;
+  margin-left: 9rem;
+  padding-top: 3rem;
+  font-family: "Bodoni Moda", serif;
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 3px 10px rgba(24, 20, 20, 0.5);
+}
+.shop-button {
+  position: absolute;
+  display: flex;
+  margin-left: 22rem;
+  margin-top: 9rem;
+  padding: 2rem 5rem;
+  border: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  /* background: rgb(151, 29, 29); */
+  background: rgb(30, 79, 100);
+  z-index: 3;
+  border-radius: 0.5rem;
+  transition: all 0.5s;
+}
+.shop-button:hover,
+.shop-button:focus {
+  background: rgb(255, 208, 208);
+  color: rgb(30, 79, 100);
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    margin-right: 10rem;
+  }
+  .shop-button {
+    margin-left: 18rem;
+  }
+}
